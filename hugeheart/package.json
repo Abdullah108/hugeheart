@@ -1,0 +1,32 @@
+{
+  "name": "hugeheart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "admin": "cd super-admin && npm start",
+    "master": "cd master-admin && npm start",
+    "admin:build": "cd super-admin && npm build",
+    "master:build": "cd master-admin && npm build",
+    "api": "cd api && npm run dev",
+    "api:dev": "cd api && npm run dev:webpack",
+    "api:build": "cd api && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbamniya/hugeheart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sbamniya/hugeheart/issues"
+  },
+  "homepage": "https://github.com/sbamniya/hugeheart#readme",
+  "dependencies": {
+    "@types/faker": "^4.1.12",
+    "faker": "^4.1.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.25.0"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "name": "hugeheart",
+  "version": "2.1.6",
+  "description": "An application for School Management.",
+  "author": "Sonu Bamniya",
+  "copyright": "Copyright 2019 Chapter247 Infotech",
+  "license": "MIT",
+  "homepage": "http://13.210.137.102/superadmin",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sonu247/hog-works-admin.git"
+  },
+  "dependencies": {
+    "@coreui/coreui": "^2.1.9",
+    "@coreui/coreui-plugin-chartjs-custom-tooltips": "^1.2.0",
+    "@coreui/icons": "0.3.0",
+    "@coreui/react": "~2.1.5",
+    "@fullcalendar/core": "^4.4.0",
+    "@fullcalendar/daygrid": "^4.4.0",
+    "@fullcalendar/interaction": "^4.3.0",
+    "@fullcalendar/react": "^4.4.0",
+    "@fullcalendar/timegrid": "^4.4.0",
+    "agora-rtc-sdk": "^3.1.0",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "bootstrap-calendar": "^0.2.4",
+    "chart.js": "^2.8.0",
+    "classnames": "^2.2.6",
+    "core-js": "^2.6.5",
+    "country-state-city": "^1.0.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "flag-icon-css": "^3.3.0",
+    "font-awesome": "^4.7.0",
+    "fullcalendar": "^3.10.1",
+    "fullcalendar-scheduler": "^1.10.0",
+    "jquery": "^3.5.1",
+    "js-object-validation": "1.0.9",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
+    "querystring": "^0.2.0",
+    "react": "^16.8.5",
+    "react-app-polyfill": "^0.2.2",
+    "react-big-calendar": "^0.23.0",
+    "react-bootstrap": "^1.0.0-beta.14",
+    "react-chartjs-2": "^2.7.4",
+    "react-dom": "^16.8.5",
+    "react-flatpickr": "^3.9.1",
+    "react-helmet": "^6.0.0",
+    "react-inline-script": "^1.2.0",
+    "react-ios-switch": "^0.1.19",
+    "react-router-config": "^4.4.0-beta.8",
+    "react-router-dom": "~4.3.1",
+    "react-select": "^3.0.4",
+    "react-sticky-table": "^4.1.0",
+    "react-test-renderer": "^16.8.5",
+    "react-time-picker": "^3.8.0",
+    "react-toastify": "^5.0.0-rc.3",
+    "reactstrap": "^7.1.0",
+    "simple-line-icons": "^2.4.1",
+    "sweetalert2": "^8.7.0",
+    "twilio-video": "^2.4.0"
+  },
+  "devDependencies": {
+    "react-scripts": "^2.1.8"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build:prod": "react-scripts build",
+    "test": "react-scripts test",
+    "test:cov": "react-scripts test --coverage",
+    "test:debug": "react-scripts --inspect-brk test --runInBand",
+    "eject": "react-scripts eject"
+  },
+  "bugs": {
+    "url": "https://github.com/sonu247/hog-works-admin/issues"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 9",
+    "not op_mini all"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/*index.js",
+      "!src/serviceWorker.js",
+      "!src/polyfill.js"
+    ]
+  }
+}
