@@ -58,6 +58,16 @@ class Contact extends Component {
               <i className={"fa fa-users"}></i> Brand Amabassador
             </NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink
+              className={classNames({ active: activeTab === 4 })}
+              onClick={() => {
+                this.toggle(4);
+              }}
+            >
+              <i className={"fa fa-users"}></i> Student
+            </NavLink>
+          </NavItem>
         </Nav>
         <br />
         <div className={"contact-container"}>
@@ -76,6 +86,11 @@ class Contact extends Component {
               {activeTab === 3 ? (
                 <>
                   <ContactList type={"brand"} />
+                </>
+              ) : null}
+              {activeTab === 4 ? (
+                <>
+                  <ContactList type={"student"} />
                 </>
               ) : null}
             </div>

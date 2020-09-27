@@ -36,6 +36,21 @@ class Contact extends Component {
     const { userDetails, activeTab } = this.state;
     const { userRole } = userDetails;
     switch (userRole) {
+      case "student":
+        return (
+          <Nav tabs>
+            <NavItem>
+              <NavLink
+                className={classNames({ active: activeTab === 4 })}
+                onClick={() => {
+                  this.toggle(4);
+                }}
+              >
+                <i className={"fa fa-users"}></i> Super Admin
+              </NavLink>
+            </NavItem>
+          </Nav>
+        );
       case "teacher":
         return (
           <Nav tabs>

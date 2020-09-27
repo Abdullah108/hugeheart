@@ -90,7 +90,7 @@ export default {
       name: `Contact`,
       icon: "fa fa-phone",
       url: AppRoutes.CONTACT,
-      role: ["brandamb", "teacher", "masteradmin"],
+      role: ["brandamb", "teacher", "masteradmin", "student"],
     },
     // {
     //   name: `Video Conference`,

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getAllTeachers, getUsers, getBrands } from "../../methods";
+import { getAllTeachers, getUsers, getBrands, getStudents } from "../../methods";
 import { logger } from "../../helpers";
 import MessageDetails from "./MessageDetails";
 import Loader from "../../containers/Loader/Loader";
@@ -36,6 +36,14 @@ class ContactList extends Component {
     });
     logger(type);
     switch (type) {
+      case "student":
+        const { data: studentresp } = await getStudents({
+          skip,
+          limit,
+          search
+        });
+        data = studentresp ? studentresp.data : [];
+        break;
       case "teacher":
         const { data: resp } = await getAllTeachers({ skip, limit, search });
         data = resp ? resp.data : [];
@@ -121,38 +129,38 @@ class ContactList extends Component {
             {isLoading ? (
               <Loader />
             ) : (
-              users.map((user, index) => {
-                return (
-                  <div
-                    className={`chat_list ${
-                      selectedContact._id === user._id ? "active_chat" : ""
-                    }`}
-                    key={index}
-                  >
+                users.map((user, index) => {
+                  return (
                     <div
-                      className="chat_people"
-                      onClick={() => {
-                        this.setState({
-                          selectedContact: user
-                        });
-                      }}
+                      className={`chat_list ${
+                        selectedContact._id === user._id ? "active_chat" : ""
+                        }`}
+                      key={index}
                     >
-                      <div className="chat_img">
-                        {" "}
-                        <img
-                          src={`${AppConfig.SERVER_FILES_ENDPOINT}${user.profileImageURL}`}
-                          onError={e => (e.target.src = UserImage)}
-                          alt={"User profile"}
-                        />{" "}
-                      </div>
-                      <div className="chat_ib">
-                        <h5>{user.fullName} </h5>
+                      <div
+                        className="chat_people"
+                        onClick={() => {
+                          this.setState({
+                            selectedContact: user
+                          });
+                        }}
+                      >
+                        <div className="chat_img">
+                          {" "}
+                          <img
+                            src={`${AppConfig.SERVER_FILES_ENDPOINT}${user.profileImageURL}`}
+                            onError={e => (e.target.src = UserImage)}
+                            alt={"User profile"}
+                          />{" "}
+                        </div>
+                        <div className="chat_ib">
+                          <h5>{user.fullName} </h5>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })
-            )}
+                  );
+                })
+              )}
           </div>
         </div>
         <MessageDetails selectedContact={selectedContact} />

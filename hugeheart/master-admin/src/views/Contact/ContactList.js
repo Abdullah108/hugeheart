@@ -132,42 +132,42 @@ class ContactList extends Component {
             {isLoading ? (
               <Loader />
             ) : (
-              users.map((userData, index) => {
-                const user = type === "teacher" ? userData.teacherId : userData;
-                return (
-                  <div
-                    className={`chat_list ${
-                      selectedContact._id === user._id ? "active_chat" : ""
-                    }`}
-                    key={index}
-                  >
+                users.map((userData, index) => {
+                  const user = type === "teacher" ? userData.teacherId : userData;
+                  return (
                     <div
-                      className="chat_people"
-                      onClick={() => {
-                        this.setState({
-                          selectedContact: user
-                        });
-                      }}
+                      className={`chat_list ${
+                        selectedContact._id === user._id ? "active_chat" : ""
+                        }`}
+                      key={index}
                     >
-                      <div className="chat_img">
-                        {" "}
-                        <img
-                          src={`${AppConfig.SERVER_FILES_ENDPOINT}${user.profileImageURL}`}
-                          onError={e => (e.target.src = UserImage)}
-                          alt={"User profile"}
-                        />{" "}
-                      </div>
-                      <div className="chat_ib">
-                        <h5>
-                          {`${user.fullName ||
-                            `${user.firstName} ${user.lastName}`}`}{" "}
-                        </h5>
+                      <div
+                        className="chat_people"
+                        onClick={() => {
+                          this.setState({
+                            selectedContact: user
+                          });
+                        }}
+                      >
+                        <div className="chat_img">
+                          {" "}
+                          <img
+                            src={`${AppConfig.SERVER_FILES_ENDPOINT}${user.profileImageURL}`}
+                            onError={e => (e.target.src = UserImage)}
+                            alt={"User profile"}
+                          />{" "}
+                        </div>
+                        <div className="chat_ib">
+                          <h5>
+                            {`${user.fullName ||
+                              `${user.firstName} ${user.lastName}`}`}{" "}
+                          </h5>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })
-            )}
+                  );
+                })
+              )}
           </div>
         </div>
         <MessageDetails selectedContact={selectedContact} />

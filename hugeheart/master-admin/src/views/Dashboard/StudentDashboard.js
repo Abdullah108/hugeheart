@@ -69,11 +69,11 @@ class StudentDashboard extends Component {
       success(
         events && events.map
           ? events.map((event) => ({
-              title: `\nClass with ${event.teacherId.fullName}`,
-              start: new Date(event.startDateTime),
-              end: new Date(event.endDateTime),
-              color: event.isTrialClass ? "#ff000054" : undefined,
-            }))
+            title: `\nClass with ${event.teacherId.fullName}`,
+            start: new Date(event.startDateTime),
+            end: new Date(event.endDateTime),
+            color: event.isTrialClass ? "#ff000054" : undefined,
+          }))
           : []
       );
     };
@@ -96,6 +96,8 @@ class StudentDashboard extends Component {
             events={getEvents}
             displayEventTime
             displayEventEnd
+            minTime='09:00:00'
+            maxTime="33:00:00"
             showNonCurrentDates={false}
             fixedWeekCount={false}
             slotLabelFormat={[

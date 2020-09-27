@@ -313,7 +313,7 @@ class EnrollStudent extends Component {
    */
   render() {
     const { hideModal, isOpen, selectedItem, priceData } = this.props;
-    const {
+    let {
       errors,
       enrollmentDate,
       numberofweek,
@@ -460,15 +460,15 @@ class EnrollStudent extends Component {
             {isLoading ? (
               <LoadingButton />
             ) : (
-              <Button
-                type="submit"
-                onClick={this.handleSubmit}
-                color={"primary"}
-                className={"btn-submit btn-link"}
-              >
-                Save
-              </Button>
-            )}
+                <Button
+                  type="submit"
+                  onClick={this.handleSubmit}
+                  color={"primary"}
+                  className={"btn-submit btn-link"}
+                >
+                  Save
+                </Button>
+              )}
           </ModalFooter>
         </Form>
       </Modal>
